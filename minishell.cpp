@@ -14,7 +14,7 @@ void runCommand(const std::string& input) {
     si.cb = sizeof(si);
     ZeroMemory(&pi, sizeof(pi));
 
-    // Create new process
+    
     if (!CreateProcessA(
         nullptr,     
         cmd,         
@@ -34,7 +34,7 @@ void runCommand(const std::string& input) {
     
     WaitForSingleObject(pi.hProcess, INFINITE);
 
-    // Close process and thread handles
+    
     CloseHandle(pi.hProcess);
     CloseHandle(pi.hThread);
 }
